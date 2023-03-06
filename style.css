@@ -1,0 +1,251 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+/* Custom Properties */
+:root{
+    --clr-bright-orange : hsl(31, 77%, 52%);
+    --clr-bright-orange-dark : hsl(31, 77%, 35%);
+    --clr-dark-cyan : hsl(184, 100%, 22%);
+    --clr-dark-cyan : hsl(184, 100%, 12%);
+    --clr-very-dark-cyan : hsl(179, 100%, 13%);
+    --clr-very-dark-cyan : hsl(179, 100%, 8%);
+    
+    /* neutral */
+    --clr-transparent-white : hsla(0, 0%, 100%, 0.75);
+    
+    /* background, headings, buttons */
+    --clr-very-light-grey :  hsl(0, 0%, 95%);
+
+    /* Font size */
+    --fs: 0.938rem;
+
+    /* Font family */
+    --ff-lexend: 'Lexend Deca', sans-serif;
+    --ff-big-shoulder: 'Big Shoulders Display', cursive;;
+}
+
+/* General Styling */
+body{
+  font-size: var(--fs);
+  background-color: var(--clr-very-light-grey);
+  display: grid;
+  place-content: center;
+}
+
+/* Mobile screen first */
+.cars{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    max-width: 375px;
+    border-radius: 1rem;
+}
+
+.car__sedan{
+    background-color: var(--clr-bright-orange);
+    padding: 1rem;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+
+.car__sedan-circle[data-icons="sedan"]::before{
+    content: "";
+    background-image: url(./images/icon-sedans.svg);
+    width: 64px;
+    height: 40px;
+    display: inline-block;
+    margin-left: 3rem;
+}
+
+.car__sedan-title{
+    color: var(--clr-very-light-grey);
+    padding-left: 3rem;
+    padding-top: 1rem;
+    font-family: var(--ff-lexend);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.car__sedan-description{
+    color: var(--clr-transparent-white);
+    padding-left: 3rem;
+    padding-top: 1rem;
+    padding-right: 3rem;
+    font-size: 1rem;
+    font-family: var(--ff-lexend);
+}
+
+.button{
+    padding: 1rem;
+    margin: 1rem 0 1rem 3rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-family: var(--ff-lexend);
+    font-weight: 700;
+}
+
+.button-sedan{
+    color: var(--clr-bright-orange);
+}
+
+
+.car__suvs{
+    background-color: var(--clr-dark-cyan);
+    padding: 1rem;
+}
+
+.car__suvs-circle[data-icons="suvs"]::before{
+    content: "";
+    background-image: url(./images/icon-suvs.svg);
+    width: 64px;
+    height: 40px;
+    display: inline-block;
+    margin-left: 3rem;
+}
+
+.car__suvs-title{
+    color: var(--clr-very-light-grey);
+    padding-left: 3rem;
+    padding-top: 1rem;
+    font-family: var(--ff-lexend);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.car__suvs-description{
+    color: var(--clr-transparent-white);
+    padding-left: 3rem;
+    padding-top: 1rem;
+    padding-right: 3rem;
+    font-size: 1rem;
+    font-family: var(--ff-lexend);
+}
+
+.button{
+    padding: 1rem;
+    margin: 1rem 0 1rem 3rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-family: var(--ff-lexend);
+    font-weight: 700;
+}
+
+.button-suvs{
+    color: var(--clr-dark-cyan);
+}
+
+.car__luxury{
+    background-color: var(--clr-very-dark-cyan);
+    padding: 1rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.car__luxury-circle[data-icons="luxury"]::before{
+    content: "";
+    background-image: url(./images/icon-luxury.svg);
+    width: 64px;
+    height: 40px;
+    display: inline-block;
+    margin-left: 3rem;
+}
+
+.car__luxury-title{
+    color: var(--clr-very-light-grey);
+    padding-left: 3rem;
+    padding-top: 1rem;
+    font-family: var(--ff-lexend);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.car__luxury-description{
+    color: var(--clr-transparent-white);
+    padding-left: 3rem;
+    padding-top: 1rem;
+    padding-right: 3rem;
+    font-size: 1rem;
+    font-family: var(--ff-lexend);
+}
+
+.button{
+    padding: 1rem;
+    margin: 1rem 0 1rem 3rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-family: var(--ff-lexend);
+    font-weight: 700;
+}
+
+.button-luxury{
+    color: var(--clr-very-dark-cyan);
+}
+
+@media (min-width: 600px)
+{
+    .cars{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100%;
+        max-width: 1080px; 
+    }
+
+    .car__sedan{
+        background-color: var(--clr-bright-orange);
+        padding: 1rem;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+
+    .car__luxury{
+        background-color: var(--clr-very-dark-cyan);
+        padding: 1rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+}
