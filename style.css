@@ -232,6 +232,7 @@ body{
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 100%;
         max-width: 1080px; 
+        margin-top: 10rem
     }
 
     .car__sedan{
